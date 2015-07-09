@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
 
   d3.timer(function() {
     force.gravity(0.05).start();
-    $('.logo.preloader').removeClass('rollIn').addClass('rollOut');
+    $('.logo.preloader').removeClass('rollIn').addClass('zoomOut');
   }, 3000);
 
 });

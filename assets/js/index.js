@@ -92,7 +92,7 @@ jQuery(document).ready(function ($) {
 
   }, 1000);
 
-  d3.timer(function() {
+  setTimeout(function() {
     force.gravity(0.05).start();
     $('.logo.preloader').removeClass('rollIn').addClass('zoomOut');
   }, 3000);

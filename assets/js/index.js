@@ -9,8 +9,6 @@ jQuery(document).ready(function ($) {
   var w = window.innerWidth;
   var h = window.innerHeight;
 
-  if (w < 1000) return;
-
   //var colors = ['#6ECD56', '#F16529', '#33A9DC', '#CC6699'],
   var colors = ['#2980B9', '#FF5346', '#81AA21', '#2C3E50'],
       count = 0,

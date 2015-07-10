@@ -3,6 +3,8 @@
 @author: WeBuild.ge, vk.com/wielski
 */
 jQuery(document).ready(function ($) {
+  // SVG Loader
+  loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
 
   // D3
 
@@ -93,6 +95,12 @@ jQuery(document).ready(function ($) {
   d3.timer(function() {
     force.gravity(0.05).start();
     $('.logo.preloader').removeClass('rollIn').addClass('zoomOut');
+    d3.timer(function(){
+      loader.show();
+      d3.timer(function(){
+        loader.hide();
+      }, 2000);
+    }, 200);
   }, 3000);
 
 });

@@ -2,16 +2,17 @@
 @title: Box Media SVG background
 @author: WeBuild.ge, vk.com/wielski
 */
+
 jQuery(document).ready(function ($) {
   // SVG Loader
   loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
+  pageWrap = document.getElementById( 'pagewrap' );
 
   // D3
 
   var w = window.innerWidth;
   var h = window.innerHeight;
 
-  //var colors = ['#6ECD56', '#F16529', '#33A9DC', '#CC6699'],
   var colors = ['#2980B9', '#FF5346', '#81AA21', '#2C3E50'],
       count = 0,
       radii = [4,4,6,6,8,10],
@@ -92,15 +93,14 @@ jQuery(document).ready(function ($) {
 
   }, 1000);
 
-  d3.timer(function() {
-    force.gravity(0.05).start();
+  setTimeout(function(){
     $('.logo.preloader').removeClass('rollIn').addClass('zoomOut');
-    d3.timer(function(){
-      loader.show();
-      d3.timer(function(){
-        loader.hide();
-      }, 2000);
-    }, 200);
+    loader.show();
+    setTimeout(function(){
+      force.gravity(0.05).start();
+      loader.hide();
+      $('section.home').show();
+    }, 2000);
   }, 3000);
 
 });

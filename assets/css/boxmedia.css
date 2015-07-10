@@ -139,7 +139,8 @@ section.home.show {
 }
 
 .pageload-overlay svg path {
-	fill: #74c225;
+	/*fill: #74c225;*/
+  fill: #fff;
 }
 
 .pageload-overlay::after,
@@ -160,7 +161,8 @@ section.home.show {
 }
 
 .pageload-overlay::after {
-	background: #ffffff;
+	/* background: #ffffff; */
+	background: #6cc88a;
 	-webkit-transform: translateX(-20px);
 	transform: translateX(-20px);
 	-webkit-animation: moveRight 0.6s linear infinite alternate;
@@ -168,7 +170,8 @@ section.home.show {
 }
 
 .pageload-overlay::before {
-	background: #323f44;
+	/* background: #323f44; */
+	background: #4fc3f7;
 	-webkit-transform: translateX(20px);
 	transform: translateX(20px);
 	-webkit-animation: moveLeft 0.6s linear infinite alternate;

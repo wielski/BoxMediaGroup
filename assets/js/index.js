@@ -99,7 +99,8 @@ jQuery(document).ready(function ($) {
     setTimeout(function(){
       force.gravity(0.05).start();
       loader.hide();
-      $('section.home').show();
+      $('section.home').addClass('show');
+      $('body').addClass('loaded');
     }, 2000);
   }, 3000);
 

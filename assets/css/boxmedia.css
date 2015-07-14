@@ -21,6 +21,9 @@ body {
   font-weight: 300;
   line-height: 1.25;
   font-family: "Lato", Arial, sans-serif; }
+  body.loaded {
+    background: #402a2a;
+    color: #fff; }
 
 .wrapper {
   position: relative; }
@@ -34,19 +37,18 @@ body {
   -webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
   /* reset transforms (Chrome bug) */
   transform: translateZ(0) translateX(0) rotateY(0deg); }
-
-.container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0px;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.2);
-  /* the transition delay of the height needs to be synced with the container transition time */
-  -webkit-transition: opacity 0.4s, height 0s 0.4s;
-  transition: opacity 0.4s, height 0s 0.4s; }
+  .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    /* the transition delay of the height needs to be synced with the container transition time */
+    -webkit-transition: opacity 0.4s, height 0s 0.4s;
+    transition: opacity 0.4s, height 0s 0.4s; }
 
 a {
   color: rgba(0, 0, 0, 0.25);
@@ -82,13 +84,10 @@ a:hover, a:focus {
 
 section.home {
   display: none; }
-
-section.home.show {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #402a2a;
-  color: #fff; }
+  section.home.show {
+    display: block;
+    width: 100%;
+    height: 100%; }
 
 #showMenu {
   border-bottom: 3px solid #ed8151;
@@ -100,16 +99,15 @@ section.home.show {
   position: absolute;
   width: 25px;
   cursor: pointer; }
-
-#showMenu:after {
-  background-color: #ed8151;
-  content: "";
-  height: 3px;
-  left: 0;
-  margin-top: -2px;
-  position: absolute;
-  top: 50%;
-  width: 100%; }
+  #showMenu:after {
+    background-color: #ed8151;
+    content: "";
+    height: 3px;
+    left: 0;
+    margin-top: -2px;
+    position: absolute;
+    top: 50%;
+    width: 100%; }
 
 /*****************************/
 /* Preloader */
@@ -122,50 +120,44 @@ section.home.show {
   left: 0;
   z-index: 1080;
   visibility: hidden; }
-
-.pageload-overlay.show {
-  visibility: visible; }
-
-.pageload-overlay svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none; }
-
-.pageload-overlay svg path {
-  fill: #fff; }
-
-.pageload-overlay::after,
-.pageload-overlay::before {
-  content: '';
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -10px;
-  border-radius: 50%;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 1000;
-  -webkit-transition: opacity 0.15s, visibility 0s 0.15s;
-  transition: opacity 0.15s, visibility 0s 0.15s; }
-
-.pageload-overlay::after {
-  /* background: #ffffff; */
-  background: #6cc88a;
-  -webkit-transform: translateX(-20px);
-  transform: translateX(-20px);
-  -webkit-animation: moveRight 0.6s linear infinite alternate;
-  animation: moveRight 0.6s linear infinite alternate; }
-
-.pageload-overlay::before {
-  /* background: #323f44; */
-  background: #4fc3f7;
-  -webkit-transform: translateX(20px);
-  transform: translateX(20px);
-  -webkit-animation: moveLeft 0.6s linear infinite alternate;
-  animation: moveLeft 0.6s linear infinite alternate; }
+  .pageload-overlay.show {
+    visibility: visible; }
+  .pageload-overlay svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; }
+    .pageload-overlay svg path {
+      fill: #fff; }
+  .pageload-overlay::after,
+  .pageload-overlay::before {
+    content: '';
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    -webkit-transition: opacity 0.15s, visibility 0s 0.15s;
+    transition: opacity 0.15s, visibility 0s 0.15s; }
+  .pageload-overlay::after {
+    /* background: #ffffff; */
+    background: #6cc88a;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+    -webkit-animation: moveRight 0.6s linear infinite alternate;
+    animation: moveRight 0.6s linear infinite alternate; }
+  .pageload-overlay::before {
+    /* background: #323f44; */
+    background: #4fc3f7;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+    -webkit-animation: moveLeft 0.6s linear infinite alternate;
+    animation: moveLeft 0.6s linear infinite alternate; }
 
 @-webkit-keyframes moveRight {
   to {

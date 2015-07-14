@@ -7,6 +7,7 @@ $color-dark: #fff;
 
 $font: "http://fonts.googleapis.com/css?family=Lato:300,400,700";
 $font-family: 'Lato', Arial, sans-serif;
+$land-family: 'DejaVu Sans', sans-serif;
 $font-weight: 300;
 $font-size: 16px;
 
@@ -53,9 +54,17 @@ $grid-gutters: (
   @if $bottom != -1 { bottom: $bottom; }
   @if $left != -1 { left: $left; }
 }
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0){
+  position: absolute;
+  @if $top != -1 { top: $top; }
+  @if $right != -1 { right: $right; }
+  @if $bottom != -1 { bottom: $bottom; }
+  @if $left != -1 { left: $left; }
+}
 
 
 @import url($font);
+@font-face {font-family:"DejaVu Sans";src:url("../fonts/DejaVuSans.eot?") format("eot"),url("../fonts/DejaVuSans.woff") format("woff"),url("../fonts/DejaVuSans.ttf") format("truetype"),url("../fonts/DejaVuSans.svg#DejaVuSans") format("svg");font-weight:normal;font-style:normal;}
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
@@ -125,6 +134,16 @@ section.home {
   .container {
     position: relative;
     padding-top: 50px;
+  }
+
+  .land {
+    text-align: center;
+    font-family: $land-family;
+    margin-top: 150px;
+
+    .desc {
+      font-size: 18px;
+    }
   }
 }
 

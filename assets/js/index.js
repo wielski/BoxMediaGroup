@@ -5,7 +5,7 @@
 
 jQuery(document).ready(function ($) {
   // SVG Loader
-  loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 400, easingIn : mina.easeinout } );
+  loader = new SVGLoader( document.getElementById( 'loader' ), { speedIn : 800, easingIn : mina.easeinout } );
   pageWrap = document.getElementById( 'pagewrap' );
 
   // D3
